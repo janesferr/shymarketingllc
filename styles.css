@@ -681,6 +681,11 @@ h3 {
   text-align: center;
 }
 
+.testimonials-link-row {
+  margin-top: 1.6rem;
+  margin-bottom: 0;
+}
+
 .section-heading-centered h2::after {
   left: 50%;
   transform: translateX(-50%);
