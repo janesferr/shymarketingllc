@@ -729,27 +729,25 @@ h3 {
 
 .podcast-player-hero {
   display: grid;
-  grid-template-columns: 164px minmax(0, 1fr);
+  grid-template-columns: 220px minmax(0, 1fr);
   gap: 1.2rem;
   align-items: start;
 }
 
 .podcast-player-artwork {
   display: grid;
-  place-items: center;
   aspect-ratio: 1;
-  border-radius: 24px;
-  background: linear-gradient(180deg, #8f4ef6, #f26789);
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.18);
+  border-radius: 18px;
+  overflow: hidden;
 }
 
 .podcast-player-artwork img {
-  width: 94px;
-  height: 94px;
-  border-radius: 22px;
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
   object-fit: cover;
-  background: rgba(255, 255, 255, 0.94);
-  padding: 0.45rem;
+  background: transparent;
+  padding: 0;
 }
 
 .podcast-player-eyebrow {
