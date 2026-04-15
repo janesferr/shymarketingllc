@@ -2,6 +2,7 @@
   --bg: #ffffff;
   --surface: #ffffff;
   --surface-strong: #ffffff;
+  --surface-soft: #f8f5ef;
   --ink: #1d2f3a;
   --muted: #5f7380;
   --line: rgba(29, 47, 58, 0.14);
@@ -12,7 +13,7 @@
   --shadow: 0 12px 28px rgba(20, 51, 65, 0.1);
   --radius: 12px;
   --radius-sm: 10px;
-  --container: 1100px;
+  --container: 1140px;
 }
 
 *,
@@ -30,7 +31,7 @@ body {
   font-family: "Avenir Next", Avenir, "Segoe UI", sans-serif;
   color: var(--ink);
   background: var(--bg);
-  line-height: 1.6;
+  line-height: 1.65;
 }
 
 img {
@@ -74,7 +75,7 @@ a {
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  padding: 0.95rem 0 0.85rem;
+  padding: 1rem 0 0.9rem;
 }
 
 .brand {
@@ -99,12 +100,12 @@ a {
 .site-nav {
   display: flex;
   align-items: center;
-  gap: 1.95rem;
+  gap: 1.65rem;
 }
 
 .site-nav a {
   text-decoration: none;
-  font-size: 0.92rem;
+  font-size: 0.96rem;
   font-weight: 400;
   color: #141414;
 }
@@ -122,13 +123,13 @@ a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 36px;
-  padding: 0.55rem 0.9rem;
+  min-height: 40px;
+  padding: 0.62rem 1rem;
   border-radius: 4px;
   border: 1px solid transparent;
   background: var(--accent);
   color: #102330;
-  font-size: 0.78rem;
+  font-size: 0.8rem;
   font-weight: 800;
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -161,7 +162,7 @@ a {
 
 .hero,
 .section {
-  padding: 3rem 0;
+  padding: 4rem 0;
 }
 
 .hero {
@@ -177,16 +178,16 @@ a {
 .contact-grid,
 .service-columns {
   display: grid;
-  gap: 2rem;
+  gap: 2.2rem;
 }
 
 .eyebrow {
-  margin: 0 0 0.55rem;
+  margin: 0 0 0.7rem;
   color: var(--accent);
   font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
-  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  font-size: 0.74rem;
 }
 
 h1,
@@ -209,17 +210,17 @@ h1 {
 }
 
 h2 {
-  font-size: clamp(1.55rem, 2.7vw, 2.25rem);
+  font-size: clamp(1.85rem, 3vw, 2.75rem);
 }
 
 h3 {
-  font-size: 1rem;
+  font-size: 1.08rem;
 }
 
 .lede {
-  margin: 0.65rem 0 0;
+  margin: 0.8rem 0 0;
   max-width: 54ch;
-  font-size: 0.88rem;
+  font-size: 0.96rem;
 }
 
 .hero-actions,
@@ -227,7 +228,7 @@ h3 {
   display: flex;
   flex-wrap: wrap;
   gap: 0.7rem;
-  margin-top: 1.2rem;
+  margin-top: 1.35rem;
 }
 
 .hero-points,
@@ -317,8 +318,8 @@ h3 {
 .hero-overlay .lede {
   max-width: 32ch;
   color: rgba(255, 255, 255, 0.94);
-  font-size: 1.05rem;
-  line-height: 1.45;
+  font-size: 1.08rem;
+  line-height: 1.48;
   margin-top: 1.6rem;
 }
 
@@ -390,6 +391,242 @@ h3 {
   background: #ffffff;
 }
 
+.about-feature-section {
+  background: #173f51;
+  color: #ffffff;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.92);
+}
+
+.about-feature-grid {
+  display: grid;
+  grid-template-columns: minmax(430px, 0.92fr) minmax(0, 1.08fr);
+  gap: 4.8rem;
+  align-items: center;
+}
+
+.about-feature-media {
+  position: relative;
+  padding: 1.45rem 0 1.45rem 3.6rem;
+}
+
+.about-feature-frame {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 360px;
+  height: 360px;
+  border: 3px solid #db5d2b;
+  background:
+    repeating-linear-gradient(
+      45deg,
+      transparent 0 20px,
+      rgba(219, 93, 43, 0.95) 20px 23px
+    );
+}
+
+.about-feature-image {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 520px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  object-position: center;
+}
+
+.about-feature-copy {
+  max-width: 760px;
+}
+
+.about-feature-section .eyebrow {
+  color: #8be3d1;
+  margin-bottom: 1rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.22em;
+}
+
+.about-feature-copy h2 {
+  max-width: 13ch;
+  font-family: "Avenir Next", Avenir, "Segoe UI", sans-serif;
+  font-size: clamp(3rem, 5vw, 4.25rem);
+  font-weight: 700;
+  line-height: 0.95;
+}
+
+.about-feature-copy p:last-of-type {
+  max-width: 30ch;
+  margin-top: 1.8rem;
+  color: rgba(255, 255, 255, 0.95);
+  font-size: 0.98rem;
+  line-height: 1.7;
+}
+
+.about-feature-button {
+  margin-top: 1.95rem;
+  min-height: 58px;
+  padding: 0 2.4rem;
+  border-radius: 16px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.comfort-zone-section {
+  position: relative;
+  padding: 0;
+  overflow: hidden;
+}
+
+.comfort-zone-background {
+  position: absolute;
+  inset: 0;
+}
+
+.comfort-zone-background img {
+  width: 100%;
+  height: 100%;
+  min-height: 720px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.comfort-zone-shell {
+  position: relative;
+  z-index: 1;
+}
+
+.comfort-zone-panel {
+  width: min(100%, 740px);
+  min-height: 720px;
+  padding: 2.2rem 3.3rem 3rem;
+  background: rgba(161, 189, 246, 0.56);
+  color: #111111;
+  text-align: left;
+}
+
+.comfort-zone-panel h2 {
+  display: grid;
+  gap: 0.1rem;
+  justify-items: start;
+  color: #000;
+  direction: ltr;
+  font-family: "DM Serif Display", "DM Serif Display Fallback", Georgia, serif;
+  font-size: clamp(2.5rem, 4vw, 4rem);
+  font-weight: 700;
+  font-style: normal;
+  line-height: 1.06;
+}
+
+.comfort-zone-panel h2 span:first-child,
+.comfort-zone-panel h2 span:last-child {
+  color: #ffd24b;
+}
+
+.comfort-zone-rule {
+  width: 330px;
+  max-width: 100%;
+  height: 3px;
+  margin: 2rem 0 1.8rem;
+  background: rgba(255, 210, 75, 0.7);
+}
+
+.comfort-zone-panel p {
+  max-width: 34ch;
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #10151a;
+}
+
+.comfort-zone-button {
+  margin-top: 2rem;
+  min-height: 58px;
+  padding: 0 3rem;
+  border-radius: 16px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.communication-section {
+  position: relative;
+  padding: 0;
+  overflow: hidden;
+}
+
+.communication-background {
+  position: absolute;
+  inset: 0;
+}
+
+.communication-background img {
+  width: 100%;
+  height: 100%;
+  min-height: 810px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.communication-shell {
+  position: relative;
+  z-index: 1;
+}
+
+.communication-panel {
+  width: min(100%, 790px);
+  min-height: 810px;
+  padding: 2.5rem 3.8rem 3.2rem;
+  background: rgba(173, 195, 244, 0.58);
+  color: #111111;
+  text-align: center;
+}
+
+.communication-panel h2 {
+  display: grid;
+  gap: 0.08rem;
+  justify-items: center;
+  font-family: "DM Serif Display", "DM Serif Display Fallback", Georgia, serif;
+  font-size: clamp(2.8rem, 4.2vw, 4.4rem);
+  font-weight: 700;
+  line-height: 1.06;
+  color: #000;
+  direction: ltr;
+}
+
+.communication-panel h2 span:first-child,
+.communication-panel h2 span:last-child {
+  color: #ffd24b;
+}
+
+.communication-rule {
+  width: 360px;
+  max-width: 100%;
+  height: 3px;
+  margin: 2rem auto 1.85rem;
+  background: rgba(255, 210, 75, 0.72);
+}
+
+.communication-panel p {
+  max-width: 38ch;
+  margin: 0 auto;
+  color: #10151a;
+  font-size: 1rem;
+  line-height: 1.72;
+}
+
+.communication-button {
+  margin-top: 2rem;
+  min-height: 62px;
+  padding: 0 3.2rem;
+  border-radius: 16px;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
 .services-section {
   padding-top: 3.8rem;
 }
@@ -400,7 +637,7 @@ h3 {
 
 .services-heading {
   max-width: 560px;
-  margin-bottom: 1.4rem;
+  margin-bottom: 1.7rem;
 }
 
 .services-heading .eyebrow {
@@ -414,13 +651,13 @@ h3 {
 
 .services-heading p:last-child {
   max-width: 500px;
-  font-size: 0.92rem;
-  line-height: 1.45;
+  font-size: 0.98rem;
+  line-height: 1.55;
   color: #6c7f8b;
 }
 
 .services-grid {
-  gap: 1rem;
+  gap: 1.15rem;
 }
 
 .section-dark {
@@ -435,7 +672,7 @@ h3 {
 
 .section-heading {
   max-width: 65ch;
-  margin-bottom: 1.1rem;
+  margin-bottom: 1.5rem;
 }
 
 .section-heading-centered {
@@ -452,7 +689,7 @@ h3 {
 .section-heading h2 {
   display: inline-block;
   position: relative;
-  padding-bottom: 0.45rem;
+  padding-bottom: 0.62rem;
 }
 
 .section-heading h2::after {
@@ -460,8 +697,8 @@ h3 {
   position: absolute;
   left: 0;
   bottom: 0;
-  width: 54px;
-  height: 2px;
+  width: 64px;
+  height: 3px;
   background: var(--accent);
 }
 
@@ -470,7 +707,7 @@ h3 {
 .testimonial-grid,
 .pricing-grid {
   display: grid;
-  gap: 0.85rem;
+  gap: 1.15rem;
 }
 
 .card-grid {
@@ -490,7 +727,7 @@ h3 {
 .contact-card,
 .price-card,
 .service-list {
-  padding: 0.8rem;
+  padding: 1rem;
 }
 
 .card,
@@ -500,8 +737,8 @@ h3 {
 }
 
 .services-grid .card {
-  border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(18, 41, 54, 0.08);
+  border-radius: 16px;
+  box-shadow: 0 8px 22px rgba(18, 41, 54, 0.08);
 }
 
 .services-grid .card img {
@@ -519,7 +756,7 @@ h3 {
 .card img,
 .partner-card img,
 .quote-card img {
-  margin-bottom: 0.65rem;
+  margin-bottom: 0.8rem;
   aspect-ratio: 16 / 9;
   object-fit: cover;
 }
@@ -546,8 +783,8 @@ h3 {
 .price-card p,
 .service-list li,
 .contact-card li {
-  font-size: 0.78rem;
-  line-height: 1.38;
+  font-size: 0.86rem;
+  line-height: 1.5;
 }
 
 .card h3,
@@ -560,8 +797,8 @@ h3 {
 
 .card h3,
 .partner-card h3 {
-  margin-bottom: 0.2rem;
-  font-size: 0.88rem;
+  margin-bottom: 0.3rem;
+  font-size: 1.04rem;
 }
 
 .quote-card {
@@ -571,7 +808,7 @@ h3 {
 
 .quote-card img {
   width: 100%;
-  height: 128px;
+  height: 170px;
   margin: 0;
   border-radius: 0;
   aspect-ratio: auto;
@@ -584,13 +821,13 @@ h3 {
 }
 
 .quote-card p {
-  margin: 0.65rem 0 0.45rem;
+  margin: 0.9rem 0 0.55rem;
 }
 
 .quote-card footer {
   display: block;
-  padding-bottom: 0.75rem;
-  font-size: 0.74rem;
+  padding-bottom: 1rem;
+  font-size: 0.82rem;
   color: var(--brand-soft);
 }
 
@@ -601,52 +838,130 @@ h3 {
   align-items: start;
 }
 
-.check-list {
-  margin: 1rem 0 0;
-  display: grid;
-  gap: 0.7rem;
+#about .split-section {
+  grid-template-columns: 1fr;
+  gap: 0;
 }
 
 .video-frame {
   margin-top: 1.2rem;
+  width: 100%;
+  max-width: 1080px;
+}
+
+.video-frame video {
+  width: 100%;
+  max-width: none;
+  aspect-ratio: 16 / 9;
+  min-height: 560px;
+  object-fit: cover;
 }
 
 .service-list {
-  background: linear-gradient(180deg, rgba(23, 63, 81, 1), rgba(23, 63, 81, 0.94));
-  color: #f4f7f8;
-  padding: 1rem;
+  background: linear-gradient(180deg, #f8f5ef, #f3eee5);
+  color: var(--ink);
+  padding: 1.45rem;
+  border: 1px solid rgba(23, 63, 81, 0.12);
+  border-top: 5px solid var(--brand);
+  border-radius: 18px;
+  box-shadow: 0 10px 28px rgba(10, 28, 38, 0.08);
 }
 
 .service-list h3,
 .service-list h4 {
-  color: #ffffff;
+  color: var(--brand);
+}
+
+.service-list h3 {
+  margin: 0.2rem 0 0.55rem;
+  font-family: "DM Serif Display", Georgia, "Times New Roman", serif;
+  font-size: 1.75rem;
+  line-height: 1.06;
 }
 
 .service-list li {
-  color: rgba(244, 247, 248, 0.78);
+  color: #4f5f69;
 }
 
-.list-group + .list-group {
-  margin-top: 0.8rem;
+.service-list-kicker {
+  margin: 0;
+  color: var(--brand-soft);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.service-list-intro {
+  max-width: 48ch;
+  margin: 0 0 1.15rem;
+  color: #52646f;
+  font-size: 0.92rem;
+  line-height: 1.62;
+}
+
+.service-track-grid {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.list-group {
+  padding: 0.95rem 1rem 1rem;
+  border: 1px solid rgba(23, 63, 81, 0.1);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.86);
+}
+
+.track-index {
+  margin: 0 0 0.45rem;
+  color: var(--accent-deep);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.list-group h4 {
+  margin: 0 0 0.55rem;
+  font-size: 1rem;
+}
+
+.list-group ul {
+  margin: 0;
+}
+
+.list-group li + li {
+  margin-top: 0.42rem;
 }
 
 .price-card {
   position: relative;
   overflow: hidden;
   min-height: 100%;
-  padding: 0.85rem 0.8rem 1rem;
+  padding: 1.15rem 1rem 1.1rem;
+  border-radius: 16px;
   text-align: center;
+  box-shadow: 0 10px 26px rgba(20, 40, 52, 0.08);
 }
 
 .price-card h3 {
   font-family: "DM Serif Display", Georgia, "Times New Roman", serif;
-  font-size: 1.6rem;
-  margin: 0.08rem 0 0.35rem;
+  font-size: 1.82rem;
+  margin: 0.1rem 0 0.45rem;
 }
 
 .price-card h3 span {
   font-size: 1rem;
   color: var(--muted);
+}
+
+.price-card-label {
+  min-height: 2.2em;
+  margin: 0.22rem 0 0.65rem;
+  color: var(--brand-soft);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
 
 .price-card ul {
@@ -660,8 +975,9 @@ h3 {
 }
 
 .price-card-featured {
-  border-color: rgba(243, 166, 28, 0.55);
-  background: linear-gradient(180deg, rgba(243, 166, 28, 0.12), rgba(255, 255, 255, 0.96));
+  border-color: rgba(243, 166, 28, 0.4);
+  border-top-width: 5px;
+  background: linear-gradient(180deg, rgba(243, 166, 28, 0.08), rgba(255, 255, 255, 0.96));
 }
 
 .tag {
@@ -669,17 +985,27 @@ h3 {
 }
 
 .packages-copy {
-  max-width: 64ch;
+  max-width: 58ch;
   margin-left: auto;
   margin-right: auto;
-  font-size: 0.82rem;
+  font-size: 0.94rem;
+  line-height: 1.68;
+}
+
+#packages .service-columns {
+  align-items: stretch;
+  gap: 1.2rem;
+}
+
+#packages .pricing-grid {
+  gap: 1rem;
 }
 
 .contact-section {
   position: relative;
   overflow: hidden;
-  padding-top: 2rem;
-  padding-bottom: 1.55rem;
+  padding-top: 3rem;
+  padding-bottom: 2.4rem;
 }
 
 .contact-section::before {
@@ -701,16 +1027,16 @@ h3 {
 .contact-form-shell {
   display: flex;
   justify-content: center;
-  margin-bottom: 0.95rem;
+  margin-bottom: 1.35rem;
 }
 
 .contact-form-card {
   width: min(100%, 430px);
   background: #ffffff;
   border: 1px solid rgba(23, 63, 81, 0.12);
-  border-radius: 10px;
-  padding: 0.9rem 0.9rem 1rem;
-  box-shadow: 0 8px 22px rgba(15, 40, 52, 0.1);
+  border-radius: 16px;
+  padding: 1.1rem 1.05rem 1.15rem;
+  box-shadow: 0 12px 28px rgba(15, 40, 52, 0.1);
   text-align: center;
 }
 
@@ -734,24 +1060,24 @@ h3 {
 
 .contact-form-card h2 {
   margin-top: 0.2rem;
-  font-size: 1.1rem;
+  font-size: 1.32rem;
 }
 
 .contact-form-copy {
-  font-size: 0.8rem;
+  font-size: 0.88rem;
   color: var(--brand);
 }
 
 .contact-form-subcopy {
   margin-top: 0.3rem;
   color: var(--muted);
-  font-size: 0.74rem;
+  font-size: 0.82rem;
 }
 
 .contact-form {
   display: grid;
-  gap: 0.55rem;
-  margin-top: 0.7rem;
+  gap: 0.7rem;
+  margin-top: 0.85rem;
   text-align: left;
 }
 
@@ -761,7 +1087,7 @@ h3 {
 }
 
 .contact-form span {
-  font-size: 0.72rem;
+  font-size: 0.78rem;
   font-weight: 700;
   color: var(--ink);
 }
@@ -770,29 +1096,29 @@ h3 {
 .contact-form textarea {
   width: 100%;
   border: 1px solid rgba(23, 63, 81, 0.18);
-  border-radius: 6px;
-  padding: 0.56rem 0.72rem;
+  border-radius: 8px;
+  padding: 0.7rem 0.8rem;
   font: inherit;
-  font-size: 0.75rem;
+  font-size: 0.82rem;
   color: var(--ink);
   background: #fff;
 }
 
 .contact-submit {
   justify-self: start;
-  min-height: 26px;
-  padding: 0.2rem 0.55rem;
-  font-size: 0.58rem;
+  min-height: 38px;
+  padding: 0.45rem 0.9rem;
+  font-size: 0.72rem;
 }
 
 .contact-grid {
-  gap: 0.5rem;
+  gap: 0.9rem;
 }
 
 .contact-strip {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 0.45rem;
+  gap: 0.85rem;
 }
 
 .contact-strip-item {
@@ -804,8 +1130,8 @@ h3 {
 
 .contact-strip-item p {
   margin: 0;
-  font-size: 0.7rem;
-  line-height: 1.3;
+  font-size: 0.82rem;
+  line-height: 1.45;
   color: var(--muted);
 }
 
@@ -817,31 +1143,31 @@ h3 {
 .contact-icon {
   display: grid;
   place-items: center;
-  width: 24px;
-  height: 24px;
+  width: 28px;
+  height: 28px;
   border-radius: 999px;
   border: 1px solid rgba(23, 63, 81, 0.14);
   background: #ffffff;
   color: var(--brand);
-  font-size: 0.66rem;
+  font-size: 0.74rem;
 }
 
 .contact-cta {
   text-align: center;
-  padding-top: 0.3rem;
+  padding-top: 0.45rem;
 }
 
 .contact-cta h3 {
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.6rem;
   font-family: "DM Serif Display", Georgia, serif;
-  font-size: 0.88rem;
-  line-height: 1.15;
+  font-size: 1.12rem;
+  line-height: 1.18;
 }
 
 .contact-cta .button {
-  min-height: 24px;
-  padding: 0.18rem 0.5rem;
-  font-size: 0.56rem;
+  min-height: 38px;
+  padding: 0.45rem 0.95rem;
+  font-size: 0.72rem;
 }
 
 .site-footer {
@@ -858,7 +1184,7 @@ h3 {
 .footer-shell {
   justify-content: center;
   gap: 0.75rem;
-  padding: 0.45rem 0 0.7rem;
+  padding: 0.7rem 0 0.9rem;
 }
 
 .footer-brand img {
@@ -867,10 +1193,16 @@ h3 {
 }
 
 .site-footer p {
-  font-size: 0.72rem;
+  font-size: 0.78rem;
 }
 
 @media (max-width: 960px) {
+  .hero,
+  .section {
+    padding: 3.2rem 0;
+  }
+
+  .about-feature-grid,
   .split-section,
   .contact-grid,
   .service-columns,
@@ -886,15 +1218,44 @@ h3 {
   }
 
   .services-section {
-    padding-top: 2.8rem;
+    padding-top: 3rem;
+  }
+
+  .about-feature-media {
+    padding: 0 0 0 1.5rem;
+  }
+
+  .about-feature-frame {
+    width: 220px;
+    height: 220px;
+  }
+
+  .comfort-zone-panel {
+    width: min(100%, 100%);
+    min-height: 620px;
+    padding: 2rem 2rem 2.5rem;
+  }
+
+  .comfort-zone-background img {
+    min-height: 620px;
   }
 
   .contact-strip {
     grid-template-columns: 1fr;
   }
 
+  .communication-panel {
+    width: min(100%, 100%);
+    min-height: 640px;
+    padding: 2rem 2rem 2.5rem;
+  }
+
+  .communication-background img {
+    min-height: 640px;
+  }
+
   .section-heading h2::after {
-    width: 42px;
+    width: 52px;
   }
 
   .hero-banner {
@@ -915,13 +1276,13 @@ h3 {
   }
 
   .hero-overlay .lede {
-    font-size: 0.92rem;
+    font-size: 0.98rem;
     margin-top: 1rem;
   }
 
   .hero-overlay .button {
     min-height: 58px;
-    font-size: 0.82rem;
+    font-size: 0.8rem;
   }
 
   .hero-nav {
@@ -929,9 +1290,33 @@ h3 {
     height: 82px;
     font-size: 2.35rem;
   }
+
+  .services-grid,
+  .partner-grid,
+  .testimonial-grid,
+  .pricing-grid {
+    gap: 1rem;
+  }
+
+  .comfort-zone-panel h2 {
+    font-size: 2.75rem;
+  }
+
+  .communication-panel h2 {
+    font-size: 2.75rem;
+  }
 }
 
 @media (max-width: 780px) {
+  .hero,
+  .section {
+    padding: 2.6rem 0;
+  }
+
+  .container {
+    width: min(calc(100% - 1.35rem), var(--container));
+  }
+
   .nav-toggle {
     display: inline-flex;
     min-height: 44px;
@@ -969,12 +1354,12 @@ h3 {
   }
 
   .hero-banner {
-    min-height: 420px;
+    min-height: 460px;
   }
 
   .hero-slide > img {
-    min-height: 420px;
-    height: 420px;
+    min-height: 460px;
+    height: 460px;
   }
 
   .hero-overlay {
@@ -983,12 +1368,12 @@ h3 {
 
   .hero-overlay h1 {
     max-width: 9ch;
-    font-size: 2.2rem;
+    font-size: 2.5rem;
   }
 
   .hero-overlay .lede {
     max-width: 25ch;
-    font-size: 0.85rem;
+    font-size: 0.92rem;
     margin-top: 0.9rem;
   }
 
@@ -997,10 +1382,142 @@ h3 {
   }
 
   .hero-overlay .button {
-    min-height: 48px;
+    min-height: 52px;
     padding: 0 1.1rem;
     border-radius: 12px;
-    font-size: 0.72rem;
+    font-size: 0.74rem;
+  }
+
+  .about-feature-grid {
+    gap: 2.2rem;
+  }
+
+  .about-feature-copy h2 {
+    font-size: 2.55rem;
+  }
+
+  .service-list {
+    padding: 1.1rem;
+  }
+
+  .service-list h3 {
+    font-size: 1.55rem;
+  }
+
+  .list-group {
+    padding: 0.9rem;
+  }
+
+  .price-card {
+    padding: 1rem 0.95rem 1.05rem;
+  }
+
+  .price-card h3 {
+    font-size: 1.65rem;
+  }
+
+  .about-feature-copy p:last-of-type {
+    max-width: none;
+    font-size: 0.9rem;
+  }
+
+  .about-feature-button {
+    min-height: 50px;
+    font-size: 0.82rem;
+    padding: 0 1.3rem;
+  }
+
+  .comfort-zone-panel {
+    min-height: 540px;
+    padding: 1.6rem 1.2rem 2rem;
+  }
+
+  .packages-copy,
+  .service-list-intro {
+    font-size: 0.88rem;
+  }
+
+  .service-list {
+    padding: 1rem;
+    border-radius: 18px;
+  }
+
+  .service-list h3 {
+    font-size: 1.5rem;
+  }
+
+  .list-group {
+    padding: 0.8rem;
+    border-radius: 14px;
+  }
+
+  .list-group h4 {
+    font-size: 0.94rem;
+  }
+
+  .price-card {
+    padding: 0.95rem 0.9rem 1rem;
+    border-radius: 18px;
+  }
+
+  .price-card h3 {
+    font-size: 1.6rem;
+  }
+
+  .price-card-label {
+    min-height: 0;
+    font-size: 0.66rem;
+  }
+
+  .comfort-zone-background img {
+    min-height: 540px;
+  }
+
+  .comfort-zone-panel h2 {
+    font-size: 2rem;
+  }
+
+  .comfort-zone-panel p {
+    font-size: 0.9rem;
+  }
+
+  .comfort-zone-rule {
+    width: 220px;
+    margin: 1.2rem auto 1.2rem;
+  }
+
+  .comfort-zone-button {
+    min-height: 48px;
+    padding: 0 1.6rem;
+    font-size: 0.82rem;
+  }
+
+  .communication-panel {
+    min-height: 560px;
+    padding: 1.6rem 1.2rem 2rem;
+  }
+
+  .communication-background img {
+    min-height: 560px;
+  }
+
+  .communication-panel h2 {
+    font-size: 2rem;
+  }
+
+  .communication-panel p {
+    font-size: 0.9rem;
+  }
+
+  .communication-rule {
+    width: 220px;
+    margin: 1.2rem auto 1.2rem;
+  }
+
+  .communication-button {
+    min-height: 48px;
+    padding: 0 1.6rem;
+    font-size: 0.82rem;
   }
 
   .hero-nav {
@@ -1010,12 +1527,21 @@ h3 {
   }
 
   .quote-card img {
-    height: 180px;
+    height: 210px;
   }
 
   .contact-form-card h2,
   .contact-cta h3 {
     font-size: 1.2rem;
+  }
+
+  .contact-form-card {
+    padding: 1rem;
+  }
+
+  .contact-strip-item p,
+  .contact-form-subcopy {
+    font-size: 0.8rem;
   }
 }
 
