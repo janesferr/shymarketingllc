@@ -1102,6 +1102,20 @@ h3 {
   line-height: 1.68;
 }
 
+.packages-funding-button {
+  margin-top: 1rem;
+  background: #efab09 !important;
+  border-color: #efab09 !important;
+  color: #102330 !important;
+}
+
+.packages-funding-button:hover,
+.packages-funding-button:focus-visible {
+  background: #ffffff !important;
+  border-color: #ffffff !important;
+  color: #102330 !important;
+}
+
 #packages .service-columns {
   align-items: stretch;
   gap: 1.2rem;
