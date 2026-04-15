@@ -1,6 +1,6 @@
 const navToggle = document.querySelector(".nav-toggle");
 const siteNav = document.querySelector(".site-nav");
-const slideshow = document.querySelector("[data-slideshow]");
+const slideshows = [...document.querySelectorAll("[data-slideshow]")];
 const contactForm = document.querySelector("[data-contact-form]");
 
 if (navToggle && siteNav) {
@@ -17,27 +17,40 @@ if (navToggle && siteNav) {
   });
 }
 
-if (slideshow) {
+slideshows.forEach((slideshow) => {
   const slides = [...slideshow.querySelectorAll("[data-slide]")];
-  const prev = slideshow.querySelector(".hero-nav-prev");
-  const next = slideshow.querySelector(".hero-nav-next");
+  const prev = slideshow.querySelector(".hero-nav-prev, .testimonial-nav-prev");
+  const next = slideshow.querySelector(".hero-nav-next, .testimonial-nav-next");
+  const slideFrame = slideshow.querySelector(".testimonial-slides");
+  const intervalMs = Number(slideshow.dataset.interval) || 7000;
   let activeIndex = slides.findIndex((slide) => slide.classList.contains("is-active"));
 
+  if (!slides.length) return;
   if (activeIndex < 0) activeIndex = 0;
+
+  const syncHeight = () => {
+    if (!slideFrame) return;
+    slideFrame.style.height = `${slides[activeIndex].offsetHeight}px`;
+  };
 
   const showSlide = (index) => {
     slides[activeIndex].classList.remove("is-active");
     activeIndex = (index + slides.length) % slides.length;
     slides[activeIndex].classList.add("is-active");
+    syncHeight();
   };
 
   prev?.addEventListener("click", () => showSlide(activeIndex - 1));
   next?.addEventListener("click", () => showSlide(activeIndex + 1));
+  window.addEventListener("resize", syncHeight);
+  syncHeight();
 
-  setInterval(() => {
-    showSlide(activeIndex + 1);
-  }, 7000);
-}
+  if (slides.length > 1) {
+    setInterval(() => {
+      showSlide(activeIndex + 1);
+    }, intervalMs);
+  }
+});
 
 if (contactForm) {
   const nameInput = contactForm.querySelector('input[name="name"]');
