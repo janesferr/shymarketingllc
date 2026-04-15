@@ -3,6 +3,8 @@ const siteNav = document.querySelector(".site-nav");
 const slideshows = [...document.querySelectorAll("[data-slideshow]")];
 const contactForm = document.querySelector("[data-contact-form]");
 
+document.body.classList.add("is-ready");
+
 if (navToggle && siteNav) {
   navToggle.addEventListener("click", () => {
     const isOpen = siteNav.classList.toggle("is-open");
@@ -51,6 +53,50 @@ slideshows.forEach((slideshow) => {
     }, intervalMs);
   }
 });
+
+const revealGroups = [
+  { selector: ".section-heading", direction: "up" },
+  { selector: ".services-grid .card", direction: "up", stagger: 90 },
+  { selector: ".about-feature-media", direction: "left" },
+  { selector: ".about-feature-copy", direction: "right", delay: 120 },
+  { selector: ".communication-panel", direction: "up" },
+  { selector: ".partner-grid .partner-card", direction: "up", stagger: 100 },
+  { selector: ".testimonial-slider", direction: "up" },
+  { selector: "#packages .service-list", direction: "left" },
+  { selector: ".pricing-grid .price-card", direction: "up", stagger: 100 },
+  { selector: ".contact-form-card", direction: "left" },
+  { selector: ".contact-info-card", direction: "right", delay: 140 }
+];
+
+const revealElements = revealGroups.flatMap(({ selector, direction, stagger = 0, delay = 0 }) =>
+  [...document.querySelectorAll(selector)].map((element, index) => {
+    element.dataset.reveal = direction;
+    element.style.setProperty("--reveal-delay", `${delay + index * stagger}ms`);
+    return element;
+  })
+);
+
+if (revealElements.length && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  const revealed = new WeakSet();
+  const revealObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting || revealed.has(entry.target)) return;
+        entry.target.classList.add("is-visible");
+        revealed.add(entry.target);
+        revealObserver.unobserve(entry.target);
+      });
+    },
+    {
+      threshold: 0.16,
+      rootMargin: "0px 0px -8% 0px"
+    }
+  );
+
+  revealElements.forEach((element) => revealObserver.observe(element));
+} else {
+  revealElements.forEach((element) => element.classList.add("is-visible"));
+}
 
 if (contactForm) {
   const nameInput = contactForm.querySelector('input[name="name"]');
