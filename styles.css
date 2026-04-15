@@ -853,12 +853,13 @@ video.podcast-feature-video {
 }
 
 .blog-card-image {
-  width: calc(100% + 2.5rem);
-  max-width: none;
-  margin: -1.35rem -1.25rem 1rem;
+  width: 50%;
+  max-width: 50%;
+  height: 50%;
+  margin: 0 0 1rem;
   aspect-ratio: 16 / 9;
   object-fit: cover;
-  border-radius: 18px 18px 0 0;
+  border-radius: 12px;
 }
 
 .blog-date {
