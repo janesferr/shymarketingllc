@@ -60,6 +60,8 @@ const revealGroups = [
   { selector: ".about-feature-media", direction: "left" },
   { selector: ".about-feature-copy", direction: "right", delay: 120 },
   { selector: ".communication-panel", direction: "up" },
+  { selector: ".podcast-media-image-shell", direction: "left" },
+  { selector: ".podcast-media-video-shell", direction: "right", delay: 120 },
   { selector: ".partner-grid .partner-card", direction: "up", stagger: 100 },
   { selector: ".testimonial-slider", direction: "up" },
   { selector: "#packages .service-list", direction: "left" },
